@@ -25,11 +25,11 @@ function find(array, callback) {
  * @returns {*[]} An array of filtered values. Potentially empty.
  *
  * EXAMPLE:
- *  find([1, 2, 3], (element) => element > 1);
+ *  filter([1, 2, 3], (element) => element > 1);
  *  //> [2, 3]
  *
  * EXAMPLE:
- *  find([1, 2, 3], (element) => element < 0);
+ *  filter([1, 2, 3], (element) => element < 0);
  *  //> []
  */
 function filter(array, callback) {
@@ -47,11 +47,11 @@ function filter(array, callback) {
  * @returns {*[]} An array of transformed elements. The length of this array should be the same as the inputted array.
  *
  * EXAMPLE:
- *  find([1, 2, 3], (element) => element + 10);
+ *  map([1, 2, 3], (element) => element + 10);
  *  //> [11, 12, 13]
  *
  * EXAMPLE:
- *  find([], (element) => element < 0);
+ *  map([], (element) => element < 0);
  *  //> []
  */
 function map(array, callback) {
@@ -68,7 +68,7 @@ function map(array, callback) {
  * @param {function} callback - A callback that accepts three arguments: element, index, and the entire array.
  *
  * EXAMPLE:
- *  find([10, 20, 30], (element, index, array) => {
+ *  forEach([10, 20, 30], (element, index, array) => {
  *    console.log(element, index, array.length)
  *  });
  *  //> 10 0 3
