@@ -20,8 +20,7 @@ function filter(array, callback) {
 function map(array, callback) {
   const result = [];
   for (let element of array) {
-    element = callback(element);
-    result.push(element);
+    result.push(callback(element));
   }
   return result;
 }
