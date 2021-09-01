@@ -19,9 +19,9 @@ function find(array, callback) {
   }
   return undefined;
 }
-function checkEle(ele){
-  if(ele > 1) return true;
-}
+// function checkEle(ele){
+//   if(ele > 1) return true;
+// }
 // find(array,checkEle)
 /**
  * Returns an array of all elements in the array that cause the callback to return `true`. If the array is empty or no elements cause the callback to return `true`, then return an empty array.
@@ -45,10 +45,9 @@ function filter(array, callback) {
   }
   return result;
 }
-function checkNum (number) {
-  if(number > 1) return true;
-  // else if(!number) return [];
-}
+// function checkNum (number) {
+//   if(number > 1) return true;
+// }
 // filter(array, checkNum)
 
 /**
@@ -73,11 +72,11 @@ function map(array, callback) {
   }
   return result;
 }
-function addNum (number){
-  if(typeof number === "number") {
-    return number+10;
-  }
-}
+// function addNum (number){
+//   if(typeof number === "number") {
+//     return number+10;
+//   }
+// }
 // map(array,addNum)
 /**
  * Does not return anything. Passes each element of the array into the callback along with the index and the array, in that order.
@@ -97,9 +96,9 @@ function forEach(array, callback) {
    callback(array[i], i, array)
   }
 }
-function anotherFunc (number, indexNum, array) {
-  return number, indexNum, array.length;
-}
+// function anotherFunc (number, indexNum, array) {
+//   return number, indexNum, array.length;
+// }
 // forEach(array,anotherFunc)
 
 // Do not change the code below this line.
