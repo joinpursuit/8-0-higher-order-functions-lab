@@ -36,6 +36,7 @@ function find(array, callback) {
  *  filter([1, 2, 3], (element) => element < 0);
  *  //> []
  */
+
 function filter(array, callback) {
   const result = [];
   for (let element of array) {
@@ -64,8 +65,10 @@ function map(array, callback) {
   const result = [];
   for (let element of array) {
     // Write your code here.
-
+  element = callback(element)
+  result.push(element)
   }
+  
   return result;
 }
 
