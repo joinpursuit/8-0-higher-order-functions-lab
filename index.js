@@ -21,7 +21,6 @@ function find(array, callback) {
   return undefined
 }
 
-// console.log(find([10, 20, 30], callback));
 
 /**
  * Returns an array of all elements in the array that cause the callback to return `true`. If the array is empty or no elements cause the callback to return `true`, then return an empty array.
@@ -40,7 +39,9 @@ function find(array, callback) {
 function filter(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+    if(array.length !== 0 && callback(element)) {
+      result.push(element)
+    }
   }
   return result;
 }
