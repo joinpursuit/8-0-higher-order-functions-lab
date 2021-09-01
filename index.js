@@ -38,9 +38,9 @@ function find(array, callback) {
 function filter(array, callback) {
   const result = [];
   for (let element of array) {
-   if (callback(element)) {
-     result.push(element)
-   }
+    if(callback(element)) {
+      result.push(element)
+    }
   }
   return result;
 }
@@ -62,7 +62,7 @@ function filter(array, callback) {
 function map(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+    result.push(callback(element))
   }
   return result;
 }
