@@ -68,7 +68,7 @@ function map(array, callback) {
   element = callback(element)
   result.push(element)
   }
-  
+
   return result;
 }
 
@@ -87,7 +87,9 @@ function map(array, callback) {
  */
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
-    // Write your code here.
+   // Write your code here.
+  let result = array[i];
+  callback(result, i, array)
   }
 }
 
