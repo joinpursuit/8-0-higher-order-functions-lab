@@ -12,12 +12,17 @@
  *  find([1, 2, 3], (element) => element < 0);
  *  //> undefined
  */
+// let array = [1,2,3,4];
 function find(array, callback) {
   for (let element of array) {
-    // Write your code here.
+    if(callback(element)) return element;
   }
+  return undefined;
 }
-
+function checkEle(ele){
+  if(ele > 1) return true;
+}
+// find(array,checkEle)
 /**
  * Returns an array of all elements in the array that cause the callback to return `true`. If the array is empty or no elements cause the callback to return `true`, then return an empty array.
  * @param {*[]} array - An array of elements. Could be anything!
@@ -32,13 +37,19 @@ function find(array, callback) {
  *  filter([1, 2, 3], (element) => element < 0);
  *  //> []
  */
+
 function filter(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+    if(callback(element)) result.push(element);
   }
   return result;
 }
+function checkNum (number) {
+  if(number > 1) return true;
+  // else if(!number) return [];
+}
+// filter(array, checkNum)
 
 /**
  * Returns an array where each element is transformed by the callback. If the array is empty, return an empty array.
@@ -57,11 +68,17 @@ function filter(array, callback) {
 function map(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+    let output = callback(element);
+    result.push(output)
   }
   return result;
 }
-
+function addNum (number){
+  if(typeof number === "number") {
+    return number+10;
+  }
+}
+// map(array,addNum)
 /**
  * Does not return anything. Passes each element of the array into the callback along with the index and the array, in that order.
  * @param {*[]} array - An array of elements. Could be anything!
@@ -77,9 +94,13 @@ function map(array, callback) {
  */
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
-    // Write your code here.
+   callback(array[i], i, array)
   }
 }
+function anotherFunc (number, indexNum, array) {
+  return number, indexNum, array.length;
+}
+// forEach(array,anotherFunc)
 
 // Do not change the code below this line.
 module.exports = { find, filter, map, forEach };
