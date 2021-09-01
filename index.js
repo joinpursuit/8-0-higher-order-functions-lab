@@ -1,8 +1,10 @@
 /**
- * Returns the first element in the array that causes the callback to return `true`. Otherwise, returns `undefined`.
+ * Returns the first element in the array that causes the callback to return `true`. Otherwise, 
+ * returns `undefined`.
  * @param {*[]} array - An array of elements. Could be anything!
  * @param {function} callback - A callback that accepts a single argument. Returns a value.
- * @returns {*|undefined} The first element that causes the callback to return a truthy value. Otherwise, returns `undefined`.
+ * @returns {*|undefined} The first element that causes the callback to return a truthy value. Otherwise, 
+ * returns `undefined`.
  *
  * EXAMPLE:
  *  find([1, 2, 3], (element) => element > 1);
@@ -15,8 +17,13 @@
 function find(array, callback) {
   for (let element of array) {
     // Write your code here.
+    if(callback (element)){
+      return element || undefined
+    }
   }
 }
+
+
 
 /**
  * Returns an array of all elements in the array that cause the callback to return `true`. If the array is empty or no elements cause the callback to return `true`, then return an empty array.
