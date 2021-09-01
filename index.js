@@ -22,10 +22,6 @@ function find(array, callback) {
   return undefined
 }
   
- 
-  
-    // Write your code here.
-  
 
 /**
  * Returns an array of all elements in the array that cause the callback to return `true`. If the array is empty or no elements cause the callback to return `true`, then return an empty array.
@@ -53,8 +49,6 @@ function filter(array, callback) {
 }
  
       
-
-
 /**
  * Returns an array where each element is transformed by the callback. If the array is empty, return an empty array.
  * @param {*[]} array - An array of elements. Could be anything!
@@ -92,7 +86,9 @@ function map(array, callback) {
  */
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
-    // Write your code here.
+    let arr = array[i]
+
+    callback(arr, i, array)
   }
 }
 
