@@ -14,9 +14,14 @@
  */
 function find(array, callback) {
   for (let element of array) {
-    // Write your code here.
+    // if the evaluated result of invoking callback passing in current element is true, return the found element
+    if (callback(element)) {
+      return element;
+    }
   }
 }
+
+// console.log(find([1, 2, 3], (element) => element > 1));
 
 /**
  * Returns an array of all elements in the array that cause the callback to return `true`. If the array is empty or no elements cause the callback to return `true`, then return an empty array.
@@ -35,7 +40,10 @@ function find(array, callback) {
 function filter(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+    //if return value of invoking callback passing in element is true then push to array
+    if (callback(element)) {
+      result.push(element);
+    }
   }
   return result;
 }
@@ -57,7 +65,8 @@ function filter(array, callback) {
 function map(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+    //push result of invoking callback passing in the current element as an argument
+    result.push(callback(element));
   }
   return result;
 }
@@ -77,7 +86,8 @@ function map(array, callback) {
  */
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
-    // Write your code here.
+    //invoke callback passing in current element, current index, and array as an argument
+    callback(array[i], i, array);
   }
 }
 
