@@ -1,5 +1,7 @@
 /**
- * Returns the first element in the array that causes the callback to return `true`. Otherwise, returns `undefined`.
+ 
+
+* Returns the first element in the array that causes the callback to return `true`. Otherwise, returns `undefined`.
  * @param {*[]} array - An array of elements. Could be anything!
  * @param {function} callback - A callback that accepts a single argument. Returns a value.
  * @returns {*|undefined} The first element that causes the callback to return a truthy value. Otherwise, returns `undefined`.
@@ -15,8 +17,13 @@
 function find(array, callback) {
   for (let element of array) {
     // Write your code here.
+    if (callback(element)) {
+     return element
   }
 }
+}
+
+
 
 /**
  * Returns an array of all elements in the array that cause the callback to return `true`. If the array is empty or no elements cause the callback to return `true`, then return an empty array.
@@ -36,6 +43,9 @@ function filter(array, callback) {
   const result = [];
   for (let element of array) {
     // Write your code here.
+    if (callback(element)){
+      result.push(element)
+    }
   }
   return result;
 }
@@ -58,6 +68,8 @@ function map(array, callback) {
   const result = [];
   for (let element of array) {
     // Write your code here.
+    // callback(element) // transformed it
+    result.push(callback(element))
   }
   return result;
 }
@@ -78,6 +90,7 @@ function map(array, callback) {
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
     // Write your code here.
+    callback(array[i], i, array)
   }
 }
 
