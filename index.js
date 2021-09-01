@@ -1,3 +1,4 @@
+const log = console.log
 /**
  * Returns the first element in the array that causes the callback to return `true`. Otherwise, 
  * returns `undefined`.
@@ -17,6 +18,7 @@
 function find(array, callback) {
   for (let element of array) {
     // Write your code here.
+    //calling the callback function
     if(callback (element)){
       return element || undefined
     }
@@ -43,6 +45,10 @@ function filter(array, callback) {
   const result = [];
   for (let element of array) {
     // Write your code here.
+     //calling the callback function
+    if(callback(element)){
+      result.push(element)
+    }
   }
   return result;
 }
@@ -62,15 +68,25 @@ function filter(array, callback) {
  *  //> []
  */
 function map(array, callback) {
+
+  //console.log(callback)
   const result = [];
+  if(!array.length){
+    return result
+  }
   for (let element of array) {
     // Write your code here.
+     //calling the callback function
+    if(callback){
+      result.push(callback(element))
+    }
   }
   return result;
 }
 
 /**
- * Does not return anything. Passes each element of the array into the callback along with the index and the array, in that order.
+ * Does not return anything. Passes each element of the array into the callback along with the index and the array, 
+ * in that order.
  * @param {*[]} array - An array of elements. Could be anything!
  * @param {function} callback - A callback that accepts three arguments: element, index, and the entire array.
  *
@@ -84,7 +100,10 @@ function map(array, callback) {
  */
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
-    // Write your code here.
+    // Write your code here
+    const number = array[i];
+     //calling the callback function 
+    callback(number, i, array)
   }
 }
 
