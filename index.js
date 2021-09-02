@@ -13,8 +13,13 @@
  *  //> undefined
  */
 function find(array, callback) {
+  //const callback = (element) => element === 20;
+  //CALLBACK IS THE FUNCTION. ELEMENT IS THE ARGUMENT, TO RETURN TRUE IF ELEMENT IS 20
+  //OTHERWISE UNDEFINED
+  //ELEMENT IS THE OBJECT IN THE ARRAY
   for (let element of array) {
     
+    //USING THE CALLBACK(ELEMENT)...FUNCTION(ARGUMENT) === TRUE
     if (callback(element) === true) {
       return(element)
     }
@@ -38,10 +43,14 @@ function find(array, callback) {
  *  //> []
  */
 function filter(array, callback) {
+  //const callback = (element) => element >= 20;
+  //CALLBACK FUNCTION = ELEMENT AS ARGUMENT. 
+  //IF ELEMENT IS GREATER THAN OR EQUAL TO 20 RETURNS TRUE. PUSH THAT ELEMENT INTO A NEW ARRAY
+  //RETURN NEW ARRAY
   const result = [];
   for (let element of array) {
  
-    if (callback(element)) {
+    if (callback(element) === true) {
       result.push(element)
     }
   }
@@ -64,9 +73,11 @@ function filter(array, callback) {
  *  //> []
  */
 function map(array, callback) {
+  //const callback = (element) => element + 10;
+  //RETURN NEW ARRAY
   const result = [];
   for (let element of array) {
-    // Write your code here.
+    result.push(callback(element));
   }
   return result;
 }
@@ -85,9 +96,13 @@ function map(array, callback) {
  *  //> 30 2 3
  */
 function forEach(array, callback) {
+  //NO RETURN NEEDED
+  
   for (let i = 0; i < array.length; i++) {
+    //[I] IS INDEX POSITION. ARR IS EACH ELEMENT IN ARRAY.
     let arr = array[i]
-
+    
+    //PASSES EACH ELEMENT, PASSES EACH INDEX, PASSES THE WHOLE ARRAY INTO CALLBACK FUNCTION.
     callback(arr, i, array)
   }
 }
