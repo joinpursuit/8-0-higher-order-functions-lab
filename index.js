@@ -14,12 +14,16 @@
  */
 function find(array, callback) {
   for (let element of array) {
+    if (callback(element)) {
+      return element;
+    }
     // Write your code here.
   }
 }
 
 /**
- * Returns an array of all elements in the array that cause the callback to return `true`. If the array is empty or no elements cause the callback to return `true`, then return an empty array.
+ * Returns an array of all elements in the array that cause the callback to return `true`.
+ * If the array is empty or no elements cause the callback to return `true`, then return an empty array.
  * @param {*[]} array - An array of elements. Could be anything!
  * @param {function} callback - A callback that accepts a single argument. Returns a value.
  * @returns {*[]} An array of filtered values. Potentially empty.
@@ -35,13 +39,17 @@ function find(array, callback) {
 function filter(array, callback) {
   const result = [];
   for (let element of array) {
+    if (callback(element)) {
+      result.push(element);
+    }
     // Write your code here.
   }
   return result;
 }
 
 /**
- * Returns an array where each element is transformed by the callback. If the array is empty, return an empty array.
+ * Returns an array where each element is transformed by the callback.
+ * If the array is empty, return an empty array.
  * @param {*[]} array - An array of elements. Could be anything!
  * @param {function} callback - A callback that accepts a single argument. Returns a value.
  * @returns {*[]} An array of transformed elements. The length of this array should be the same as the inputted array.
@@ -57,6 +65,7 @@ function filter(array, callback) {
 function map(array, callback) {
   const result = [];
   for (let element of array) {
+    result.push(callback(element));
     // Write your code here.
   }
   return result;
@@ -77,6 +86,7 @@ function map(array, callback) {
  */
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
+    callback(array[i], i, array);
     // Write your code here.
   }
 }
