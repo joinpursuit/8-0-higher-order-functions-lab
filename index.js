@@ -12,13 +12,13 @@
  *  find([1, 2, 3], (element) => element < 0);
  *  //> undefined
  */
-function find(array, callback) {
-  for (let element of array) {
-    // Write your code here.
-  if (callback(element))
-  return element
 
+function find(array, callback) {
+  for (let element of array) { 
+  // Write your code here.
+  if (callback(element)) return element; 
   }
+
   return undefined;
 }
 
@@ -40,10 +40,11 @@ function find(array, callback) {
 function filter(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
-    if (callback(element))
-    result.push(element)
+  // Write your code here.
+  if (callback(element))
+  result.push(element)
   }
+
   return result;
 }
 
@@ -85,11 +86,12 @@ function map(array, callback) {
  *  //> 20 1 3
  *  //> 30 2 3
  */
+
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
    // Write your code here.
   let result = array[i];
-  callback(result, i, array)
+  callback(result, i , array)
   }
 }
 
