@@ -13,9 +13,12 @@
  *  //> undefined
  */
 function find(array, callback) {
-  for (let element of array) {
-    // Write your code here.
+for (let element of array) {
+  if (callback(element)){
+  return element;
   }
+}
+  return undefined;
 }
 
 /**
@@ -35,9 +38,11 @@ function find(array, callback) {
 function filter(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+    if(callback(element)){
+      result.push(element);
+    }
   }
-  return result;
+return result;
 }
 
 /**
@@ -54,10 +59,18 @@ function filter(array, callback) {
  *  map([], (element) => element < 0);
  *  //> []
  */
+//every map operation has the same pattern. 
+// make a new array,
+// loop through old array,
+// run some kind of operation on each element,
+// push the transformed element into the new array,
+//return the result.
+
+
 function map(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+      result.push(callback(element));
   }
   return result;
 }
@@ -77,7 +90,7 @@ function map(array, callback) {
  */
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
-    // Write your code here.
+    callback(array[i], i, array);// Write your code here.
   }
 }
 
