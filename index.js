@@ -12,6 +12,7 @@
  *  find([1, 2, 3], (element) => element < 0);
  *  //> undefined
  */
+//map always pushes a TRANSFORMED VERSION
 function find(array, callback) {
   for (let element of array) {
     // Write your code here.
@@ -23,6 +24,14 @@ function find(array, callback) {
 
   return undefined;
 }
+//similiar to filter but we are not worried about push into an array
+//example: function getDinoById(dinosaurs, Id) {
+//for (const dinosaur of dinosaurs) {
+//function getDinoById(dinosaurs, id//
+//if(dinosaur.dinoID === id) {
+//return dinosaurs.find(dinosaurs) =>
+//}
+
 /**
  * Returns an array of all elements in the array that cause the callback to return `true`. If the array is empty or no elements cause the callback to return `true`, then return an empty array.
  * @param {*[]} array - An array of elements. Could be anything!
@@ -37,16 +46,19 @@ function find(array, callback) {
  *  filter([1, 2, 3], (element) => element < 0);
  *  //> []
  */
+//filter operation asks does it match our test and then pushes it for example: filter (filter[]) then push it in without changing it
 function filter(array, callback) {
   const result = [];
   for (let element of array) {
     // Write your code here.
 
-    if (callback(element)) result.push(element);
+    if (callback(element) === true) result.push(element);
   }
   return result;
 }
 
+//another filter example:
+//const someNumbers
 /**
  * Returns an array where each element is transformed by the callback. If the array is empty, return an empty array.
  * @param {*[]} array - An array of elements. Could be anything!
