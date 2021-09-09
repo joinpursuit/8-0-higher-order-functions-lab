@@ -18,6 +18,14 @@ function find(array, callback) {
   }
   return undefined;  
 }
+
+let cbFunction = (num) => {
+  return num%2 === 0
+}
+let arr = [1, 3, 4, 5, 6]
+console.log(cbFunction(2))
+
+console.log(find(arr, cbFunction))
 /**
  * Returns an array of all elements in the array that cause the callback to return `true`. If the array is empty or no elements cause the callback to return `true`, then return an empty array.
  * @param {*[]} array - An array of elements. Could be anything!
