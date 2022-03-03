@@ -42,6 +42,10 @@ function filter(array, callback) {
   const result = [];
   for (let element of array) {
     // Write your code here.
+   if (callback(element)){
+     result.push(element)
+   }
+   ;
   }
   return result;
 }
