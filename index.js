@@ -35,10 +35,13 @@ function find(array, callback) {
  *  filter([1, 2, 3], (element) => element < 0);
  *  //> []
  */
-function filter(array, callback) {
+function filter(array, callback = true) {
   const result = [];
   for (let element of array) {
     // Write your code here.
+    if (callback(element)){
+      result.push(element)
+    }
   }
   return result;
 }
