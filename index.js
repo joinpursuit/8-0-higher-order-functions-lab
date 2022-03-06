@@ -14,6 +14,10 @@
  */
 function find(array, callback) {
   for (let element of array) {
+    if (callback(element)){
+      console.log(element)
+      return element
+    }
     // Write your code here.
   }
 }
@@ -35,6 +39,9 @@ function find(array, callback) {
 function filter(array, callback) {
   const result = [];
   for (let element of array) {
+    if (callback(element)) {
+      result.push(element)
+    }
     // Write your code here.
   }
   return result;
@@ -57,10 +64,11 @@ function filter(array, callback) {
 function map(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+   result.push(callback(element))
+    }
+ return result
   }
-  return result;
-}
+  
 
 /**
  * Does not return anything. Passes each element of the array into the callback along with the index and the array, in that order.
@@ -77,8 +85,10 @@ function map(array, callback) {
  */
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
+    callback(array[i],i, array)
     // Write your code here.
   }
+  
 }
 
 // Do not change the code below this line.
