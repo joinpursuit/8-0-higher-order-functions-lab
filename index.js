@@ -19,7 +19,6 @@ function find(array, callback) {
     }
     // Write your code here.
   }
-  return undefined;
 }
 
 /**
@@ -40,7 +39,7 @@ function filter(array, callback) {
   const result = [];
   for (let element of array) {
     if(callback(element)){
-      result.push(element)
+      result.push(element);
     }
     // Write your code here.
   }
@@ -64,7 +63,7 @@ function filter(array, callback) {
 function map(array, callback) {
   const result = [];
   for (let element of array) {
-    result.push(callback(element))
+    result.push(callback(element));
     // Write your code here.
   }
   return result;
