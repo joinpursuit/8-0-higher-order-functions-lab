@@ -19,7 +19,6 @@ function find(array, callback) {
       return element;
   }
 }
-return undefined;
 }
 
 /**
