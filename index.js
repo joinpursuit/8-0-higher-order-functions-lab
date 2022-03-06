@@ -118,7 +118,7 @@ function forEach(array, callback) {
   //loop through the array 
   for (let i = 0; i < array.length; i++) {
 
-    //prints the array element, array index and array
+    //prints the array element, array index and array length 
     callback(array[i],i,array)
   }
 }
