@@ -15,7 +15,7 @@
 function find(array, callback) {
   for (let element of array) {
     // Write your code here.
-    if (callback(element)){
+    if (callback(element)) {
       return element;
     }
   }
@@ -39,7 +39,7 @@ function filter(array, callback = true) {
   const result = [];
   for (let element of array) {
     // Write your code here.
-    if (callback(element)){
+    if (callback(element)) {
       result.push(element)
     }
   }
@@ -64,6 +64,7 @@ function map(array, callback) {
   const result = [];
   for (let element of array) {
     // Write your code here.
+    result.push(callback(element));
   }
   return result;
 }
@@ -84,8 +85,14 @@ function map(array, callback) {
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
     // Write your code here.
+    callback(array[i], i, array);
   }
 }
 
 // Do not change the code below this line.
-module.exports = { find, filter, map, forEach };
+module.exports = {
+  find,
+  filter,
+  map,
+  forEach
+};
