@@ -12,11 +12,15 @@
  *  find([1, 2, 3], (element) => element < 0);
  *  //> undefined
  */
-function find(array, callback) {
+//callback return a boolean whether its true or undefined
+const find = (array, callback) => {
   for (let element of array) {
     // Write your code here.
+    if (callback(element)) {
+      return element;
+    }
   }
-}
+};
 
 /**
  * Returns an array of all elements in the array that cause the callback to return `true`. If the array is empty or no elements cause the callback to return `true`, then return an empty array.
@@ -32,13 +36,16 @@ function find(array, callback) {
  *  filter([1, 2, 3], (element) => element < 0);
  *  //> []
  */
-function filter(array, callback) {
+const filter = (array, callback) => {
   const result = [];
   for (let element of array) {
     // Write your code here.
+    if (callback(element)) {
+      result.push(element);
+    }
   }
   return result;
-}
+};
 
 /**
  * Returns an array where each element is transformed by the callback. If the array is empty, return an empty array.
@@ -54,13 +61,17 @@ function filter(array, callback) {
  *  map([], (element) => element < 0);
  *  //> []
  */
-function map(array, callback) {
+//array[10,20,30]
+const map = (array, callback) => {
   const result = [];
   for (let element of array) {
     // Write your code here.
+    if (callback(element)) {
+      result.push(callback(element));
+    }
   }
   return result;
-}
+};
 
 /**
  * Does not return anything. Passes each element of the array into the callback along with the index and the array, in that order.
@@ -74,12 +85,15 @@ function map(array, callback) {
  *  //> 10 0 3
  *  //> 20 1 3
  *  //> 30 2 3
+ * //return element(number value), index and the length of the array
  */
-function forEach(array, callback) {
+const forEach = (array, callback) => {
   for (let i = 0; i < array.length; i++) {
+    //[1,2.3]
     // Write your code here.
+    callback(array[i], i, array);
   }
-}
+};
 
 // Do not change the code below this line.
 module.exports = { find, filter, map, forEach };
