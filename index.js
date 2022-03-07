@@ -1,5 +1,5 @@
 /**
- * Returns the first element in the array that causes the callback to return `true`. Otherwise, returns `undefined`.
+ * Returns the first element in the (array that causes the callback to return `true`). Otherwise, returns `undefined`.
  * @param {*[]} array - An array of elements. Could be anything!
  * @param {function} callback - A callback that accepts a single argument. Returns a value.
  * @returns {*|undefined} The first element that causes the callback to return a truthy value. Otherwise, returns `undefined`.
@@ -12,10 +12,15 @@
  *  find([1, 2, 3], (element) => element < 0);
  *  //> undefined
  */
-function find(array, callback) {
+const find = (array, callback) => {
   for (let element of array) {
     // Write your code here.
+  if(callback(element)) {
+    return element
   }
+  
+  }
+    
 }
 
 /**
@@ -32,12 +37,16 @@ function find(array, callback) {
  *  filter([1, 2, 3], (element) => element < 0);
  *  //> []
  */
-function filter(array, callback) {
+const filter = (array, callback) => {
   const result = [];
   for (let element of array) {
     // Write your code here.
+    if(callback(element)){
+      result.push(element)
+    }
+  
   }
-  return result;
+return result
 }
 
 /**
@@ -46,18 +55,21 @@ function filter(array, callback) {
  * @param {function} callback - A callback that accepts a single argument. Returns a value.
  * @returns {*[]} An array of transformed elements. The length of this array should be the same as the inputted array.
  *
- * EXAMPLE:
+ * EXAMPLE:        the result of the call back
  *  map([1, 2, 3], (element) => element + 10);
- *  //> [11, 12, 13]
+ *  //> [11, 12, 13]  pushing all of the value in the element
  *
  * EXAMPLE:
  *  map([], (element) => element < 0);
  *  //> []
  */
-function map(array, callback) {
+const map = (array, callback) => {
   const result = [];
   for (let element of array) {
     // Write your code here.
+  
+      result.push(callback(element))
+    
   }
   return result;
 }
@@ -75,9 +87,12 @@ function map(array, callback) {
  *  //> 20 1 3
  *  //> 30 2 3
  */
-function forEach(array, callback) {
+const forEach = (array, callback) =>  {
   for (let i = 0; i < array.length; i++) {
     // Write your code here.
+
+    callback(array[i], i, array);
+  
   }
 }
 
