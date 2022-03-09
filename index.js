@@ -12,9 +12,11 @@
  *  find([1, 2, 3], (element) => element < 0);
  *  //> undefined
  */
-function find(array, callback) {
+ function find(array, callback = undefined) {
   for (let element of array) {
-    // Write your code here.
+    if (callback(element)){
+      return element
+    }
   }
 }
 
@@ -35,7 +37,10 @@ function find(array, callback) {
 function filter(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+    if(callback(element)){
+      result.push(element)
+    }
+   
   }
   return result;
 }
@@ -54,10 +59,10 @@ function filter(array, callback) {
  *  map([], (element) => element < 0);
  *  //> []
  */
-function map(array, callback) {
+ function map(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+    result.push(callback(element))
   }
   return result;
 }
@@ -83,3 +88,4 @@ function forEach(array, callback) {
 
 // Do not change the code below this line.
 module.exports = { find, filter, map, forEach };
+
