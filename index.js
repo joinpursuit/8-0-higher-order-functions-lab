@@ -12,11 +12,24 @@
  *  find([1, 2, 3], (element) => element < 0);
  *  //> undefined
  */
+
+//creates a function called find that takes in a parameter array and the function callback
 function find(array, callback) {
+  //for loop through the array iterating each element
   for (let element of array) {
-    // Write your code here.
+  // console.log(callback(element));
+
+    //conditional statement if callback element which is less than 1 is equal to the element of the array is true
+    if(callback(element) === true ){
+
+      //then return the element of that array
+      return element;
+    } 
+      
+    }
+
   }
-}
+
 
 /**
  * Returns an array of all elements in the array that cause the callback to return `true`. If the array is empty or no elements cause the callback to return `true`, then return an empty array.
@@ -32,11 +45,23 @@ function find(array, callback) {
  *  filter([1, 2, 3], (element) => element < 0);
  *  //> []
  */
+
+//creates a function called filter with an array and a callback function 
 function filter(array, callback) {
+
+  //creates an empty array called result
   const result = [];
+
+  //loop through the array iterating each element
   for (let element of array) {
-    // Write your code here.
+    //if the callback element match the element iterataion through the arry is true 
+    if(callback(element) === true){
+
+      //push that element into the empty array result
+      result.push(element)
+    }
   }
+  //return result with the matching elements pushed inside
   return result;
 }
 
@@ -53,12 +78,23 @@ function filter(array, callback) {
  * EXAMPLE:
  *  map([], (element) => element < 0);
  *  //> []
- */
+ *///
+
+ //creates a function called map with the parameters array and the callback function 
 function map(array, callback) {
+
+  //creates an empty array called result
   const result = [];
+
+  //for loop through the array 
   for (let element of array) {
-    // Write your code here.
+
+    //the callback function tranforms * 10 the element at the iteration through the array and pushes it into the empty array result
+    result.push(callback(element))
+
+
   }
+  //return array with the transformed elements inside 
   return result;
 }
 
@@ -75,9 +111,15 @@ function map(array, callback) {
  *  //> 20 1 3
  *  //> 30 2 3
  */
+
+//creates a function called forEach with the parameters array and the callback function 
 function forEach(array, callback) {
+
+  //loop through the array 
   for (let i = 0; i < array.length; i++) {
-    // Write your code here.
+
+    //prints the array element, array index and array length 
+    callback(array[i],i,array)
   }
 }
 
