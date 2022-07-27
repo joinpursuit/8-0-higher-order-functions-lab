@@ -15,6 +15,11 @@
 function find(array, callback) {
   for (let element of array) {
     // Write your code here.
+    if(callback(element)){
+    // Call back to the element of the array
+      return element
+    // Returns array of elements... returns 'true' or 'undefined'
+    }
   }
 }
 
@@ -36,8 +41,14 @@ function filter(array, callback) {
   const result = [];
   for (let element of array) {
     // Write your code here.
+    if(callback(element)){
+    //checking callback for the element  
+    result.push(element)
+    //push to result
+    }
   }
   return result;
+  // returns array. potentially empty.
 }
 
 /**
@@ -58,8 +69,11 @@ function map(array, callback) {
   const result = [];
   for (let element of array) {
     // Write your code here.
+    result.push(callback(element))
+    //transforms element by callback
   }
   return result;
+  // return a transformed array.
 }
 
 /**
@@ -78,8 +92,10 @@ function map(array, callback) {
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
     // Write your code here.
+    callback(array[i], i, array)
+    //Passes each element of the array into the callback along with the index and the array, in that order.
   }
 }
-
+// please explain why the order matters
 // Do not change the code below this line.
 module.exports = { find, filter, map, forEach };
