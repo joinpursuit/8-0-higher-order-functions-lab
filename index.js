@@ -42,7 +42,15 @@ function find(array, callback) {
 function filter(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+    /*
+    I'm returning true or or the result
+    I would have to put the element into the result so use push? 
+    should filter list and inputs
+    */ 
+    if(callback(element)) result.push(element)
+
+    //This wont work with a return cause it interferes with other
+  
   }
   return result;
 }
