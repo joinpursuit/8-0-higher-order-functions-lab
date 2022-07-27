@@ -14,8 +14,15 @@
  */
 function find(array, callback) {
   for (let element of array) {
-    // Write your code here.
+
+    /*
+    I'm returning true or undefined 
+    The function should be call back
+    I'm utilizing element
+    */
+    if(callback(element)) return element
   }
+  return undefined
 }
 
 /**
