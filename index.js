@@ -72,7 +72,10 @@ function filter(array, callback) {
 function map(array, callback) {
   const result = [];
   for (let element of array) {
-    // Writ
+    /*
+    if statement to check for empty array
+    */
+   result.push(callback(element))
   }
   return result;
 }
@@ -90,9 +93,11 @@ function map(array, callback) {
  *  //> 20 1 3
  *  //> 30 2 3
  */
+
+//  Please explain this when you get a chance
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
-    // Write your code here.
+    callback(array[i],i, array)
   }
 }
 
