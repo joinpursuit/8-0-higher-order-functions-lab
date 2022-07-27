@@ -13,11 +13,15 @@
  *  //> undefined
  */
 function find(array, callback) {
+  num = 0
   for (let element of array) {
-    // Write your code here.
+   (callback(element) ? num = element: num = undefined)
+
+   if(num != undefined)
+   {return num}
   }
 }
-
+find([1, 2, 3], (element) => element > 1)
 /**
  * Returns an array of all elements in the array that cause the callback to return `true`. If the array is empty or no elements cause the callback to return `true`, then return an empty array.
  * @param {*[]} array - An array of elements. Could be anything!
@@ -35,11 +39,13 @@ function find(array, callback) {
 function filter(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+   if (callback(element)){
+    result.push(element)
+   }
   }
-  return result;
+  return (result);
 }
-
+filter([1, 2, 3], (element) => element > 1)
 /**
  * Returns an array where each element is transformed by the callback. If the array is empty, return an empty array.
  * @param {*[]} array - An array of elements. Could be anything!
@@ -58,6 +64,9 @@ function map(array, callback) {
   const result = [];
   for (let element of array) {
     // Write your code here.
+    
+      result.push(callback(element))
+     
   }
   return result;
 }
@@ -78,6 +87,7 @@ function map(array, callback) {
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
     // Write your code here.
+    callback(array[i],i,array)
   }
 }
 
