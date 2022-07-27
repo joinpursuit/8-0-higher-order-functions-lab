@@ -14,12 +14,6 @@
  */
 function find(array, callback) {
   for (let element of array) {
-
-    /*
-    I'm returning true or undefined 
-    The function should be call back
-    I'm utilizing element
-    */
     if(callback(element)) return element
   }
   return undefined
@@ -42,15 +36,7 @@ function find(array, callback) {
 function filter(array, callback) {
   const result = [];
   for (let element of array) {
-    /*
-    I'm returning true or or the result
-    I would have to put the element into the result so use push? 
-    should filter list and inputs
-    */ 
     if(callback(element)) result.push(element)
-
-    //This wont work with a return cause it interferes with other
-  
   }
   return result;
 }
@@ -72,9 +58,7 @@ function filter(array, callback) {
 function map(array, callback) {
   const result = [];
   for (let element of array) {
-   //filter and map are the same in my mind so just testing. 
    result.push(callback(element))
-   //logic is asking to transform the call back
   }
   return result;
 }
