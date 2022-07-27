@@ -14,8 +14,15 @@
  */
 function find(array, callback) {
   for (let element of array) {
-    // Write your code here.
+    /*
+    1. if statement check if true or false
+    2. already returning undefined on line 22
+    */
+   if (callback(element)=== true ) {
+     return element
+   }
   }
+  return undefined
 }
 
 /**
