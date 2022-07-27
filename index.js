@@ -64,10 +64,8 @@ function map(array, callback) {
   const result = [];
   for (let element of array) {
     // Write your code here.
-    if(callback(element)){
-      result.push(element)
-
-    }
+    result.push(callback(element))
+   
   }
   return result;
 }
