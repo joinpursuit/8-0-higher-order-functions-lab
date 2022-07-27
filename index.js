@@ -72,7 +72,9 @@ function filter(array, callback) {
 function map(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+   //filter and map are the same in my mind so just testing. 
+   result.push(callback(element))
+   //logic is asking to transform the call back
   }
   return result;
 }
