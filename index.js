@@ -62,7 +62,7 @@ function filter(array, callback) {
 function map(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+ result.push(callback(element)) 
   }
   return result;
 }
