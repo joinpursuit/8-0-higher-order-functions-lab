@@ -1,0 +1,12 @@
+function find(array, callback) {
+  for (let element of array) {
+    // Write your code here.
+    function callbk (callback){
+        if (element >= callback)
+      return element 
+}
+}
+return callbk() 
+}
+first=find([10,20,30],7)
+console.log(first)

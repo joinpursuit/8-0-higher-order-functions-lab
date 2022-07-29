@@ -12,10 +12,16 @@
  *  find([1, 2, 3], (element) => element < 0);
  *  //> undefined
  */
+
+// callback is alreadly a working fucntion; use the params to return a value or return undefined  
 function find(array, callback) {
   for (let element of array) {
     // Write your code here.
+    if  (callback(element)){
+      return element
+    } 
   }
+  return undefined
 }
 
 /**
@@ -35,7 +41,8 @@ function find(array, callback) {
 function filter(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+    if  (callback(element)){
+    result.push(element)}
   }
   return result;
 }
@@ -57,8 +64,7 @@ function filter(array, callback) {
 function map(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
-  }
+      result.push(callback(element))}  
   return result;
 }
 
@@ -76,10 +82,14 @@ function map(array, callback) {
  *  //> 30 2 3
  */
 function forEach(array, callback) {
+  
   for (let i = 0; i < array.length; i++) {
-    // Write your code here.
+    // Write your code here. .... I'm not gonna lie, I stumbled upon all of this passing through trial and error all night
+    console.log(callback(array[i],i,array))
   }
+  
 }
+// console.log(forEach)
 
 // Do not change the code below this line.
 module.exports = { find, filter, map, forEach };
