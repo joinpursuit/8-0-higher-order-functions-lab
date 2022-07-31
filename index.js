@@ -86,6 +86,6 @@ function forEach(array, callback) {
     callback(array[i], i, array);
   }
 }
-
+// easy lab
 // Do not change the code below this line.
 module.exports = { find, filter, map, forEach };
