@@ -66,10 +66,12 @@ function filter(array, callback) {
 function map(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+    result.push(callback(element))
+    }
+   // console.log(result)
+    return result;
   }
-  return result;
-}
+
 
 /**
  * Does not return anything. Passes each element of the array into the callback along with the index and the array, in that order.
