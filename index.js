@@ -37,13 +37,20 @@
  *  filter([1, 2, 3], (element) => element < 0);
  *  //> []
  */
-function filter(array, callback) {
+ function filter(array, callback) {
+
   const result = [];
+
   for (let element of array) {
-    // Write your code here.
+
+    if( callback(element) )
+      result.push( element )
+
   }
+
   return result;
-}
+
+} // ends filter()
 
 /**
  * Returns an array where each element is transformed by the callback. If the array is empty, return an empty array.
