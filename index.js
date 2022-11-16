@@ -14,8 +14,16 @@
  */
 function find(array, callback) {
   for (let element of array) {
-    // Write your code here.
+    //--^goes through the array values with for..of loop as element is the variable to return
+
+    if (callback(element))
+      //---^if element value is found w/i callback return the element value accordingly 
+
+      return element
+
   }
+  //if else statement would cause the conditon not to run aka the if statement
+
 }
 
 /**
@@ -35,9 +43,18 @@ function find(array, callback) {
 function filter(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+    //---^ w/ element as the variable name to retrieve out of the array, a for...of loop will go through the array
+
+    if (callback(element)) {
+      //---^if element value is found w/i callback return the element value accordingly 
+
+      result.push(element)
+      //---^pushes element value into the empty array aka result when the values are fouund true after loop 
+    }
+
   }
-  return result;
+
+  return result;//returns emptry array if theres no element value
 }
 
 /**
@@ -57,7 +74,10 @@ function filter(array, callback) {
 function map(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+
+    result.push(callback(element))
+    //---^ no if statement needed b/c you are transforming the callback w/i result option
+
   }
   return result;
 }
@@ -77,8 +97,12 @@ function map(array, callback) {
  */
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
-    // Write your code here.
+
+    callback(array[i], i, array)
+    //---^array[i] is the desried element;i is the index,array is the actual array in whole passing/being accepted by function parameter callback,no return needed
+
   }
+  //no return needed b/c callback the parameter is where the desired information is placed into
 }
 
 // Do not change the code below this line.
