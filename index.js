@@ -66,13 +66,19 @@
  *  map([], (element) => element < 0);
  *  //> []
  */
-function map(array, callback) {
+ function map(array, callback) {
+
   const result = [];
+
   for (let element of array) {
-    // Write your code here.
+
+    result.push( callback(element) )
+
   }
+
   return result;
-}
+
+} // ends map()
 
 /**
  * Does not return anything. Passes each element of the array into the callback along with the index and the array, in that order.
