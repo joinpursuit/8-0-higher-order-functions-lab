@@ -93,11 +93,15 @@
  *  //> 20 1 3
  *  //> 30 2 3
  */
-function forEach(array, callback) {
+ function forEach(array, callback) {
+
   for (let i = 0; i < array.length; i++) {
-    // Write your code here.
+
+    callback(array[i], i, array)
+
   }
-}
+
+} // ends forEach()
 
 // Do not change the code below this line.
 module.exports = { find, filter, map, forEach };
