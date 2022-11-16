@@ -14,8 +14,14 @@
  */
 function find(array, callback) {
   for (let element of array) {
-    // Write your code here.
-  }
+
+    if (callback(element)) {
+      //console.log(callback(element));
+      return element;
+
+      //if callback has element, returns (truthy value)
+    }
+  } return undefined
 }
 
 /**
