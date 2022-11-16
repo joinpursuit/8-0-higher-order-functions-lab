@@ -15,6 +15,9 @@
 function find(array, callback) {
   for (let element of array) {
     // Write your code here.
+    if (callback(element)){
+      return element
+    }
   }
 }
 
@@ -36,15 +39,21 @@ function filter(array, callback) {
   const result = [];
   for (let element of array) {
     // Write your code here.
+    if (callback(element)){
+      result.push(element)
+    }
   }
   return result;
 }
 
 /**
- * Returns an array where each element is transformed by the callback. If the array is empty, return an empty array.
+ * Returns an array where each element is transformed by the callback. 
+ * If the array is empty, return an empty array.
  * @param {*[]} array - An array of elements. Could be anything!
- * @param {function} callback - A callback that accepts a single argument. Returns a value.
- * @returns {*[]} An array of transformed elements. The length of this array should be the same as the inputted array.
+ * @param {function} callback - A callback that accepts a single argument. 
+ * Returns a value.
+ * @returns {*[]} An array of transformed elements. 
+ * The length of this array should be the same as the inputted array.
  *
  * EXAMPLE:
  *  map([1, 2, 3], (element) => element + 10);
@@ -58,6 +67,7 @@ function map(array, callback) {
   const result = [];
   for (let element of array) {
     // Write your code here.
+    result.push(callback(element))
   }
   return result;
 }
@@ -78,6 +88,7 @@ function map(array, callback) {
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
     // Write your code here.
+    callback(array[i], i, array)
   }
 }
 
