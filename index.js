@@ -12,10 +12,13 @@
  *  find([1, 2, 3], (element) => element < 0);
  *  //> undefined
  */
-function find(array, callback) {
-  for (let element of array) {
-    // Write your code here.
+function find(array, callback) { //placeholders
+  for (let element of array) { // checking through the index of the array
+    if (callback(element)) { // arrow function 
+      return element;
+    }
   }
+  return undefined;
 }
 
 /**
@@ -26,16 +29,18 @@ function find(array, callback) {
  *
  * EXAMPLE:
  *  filter([1, 2, 3], (element) => element > 1);
- *  //> [2, 3]
+ *  //> [2, 3] //if the element is greater than 1 
  *
  * EXAMPLE:
  *  filter([1, 2, 3], (element) => element < 0);
  *  //> []
  */
 function filter(array, callback) {
-  const result = [];
-  for (let element of array) {
-    // Write your code here.
+  const result = []; //empty array 
+  for (let element of array) { // for loop 
+    if (callback(element)) { // checking if element fits callback parameters
+      result.push(element) //push the element inside of the empty array
+    }
   }
   return result;
 }
@@ -55,9 +60,9 @@ function filter(array, callback) {
  *  //> []
  */
 function map(array, callback) {
-  const result = [];
-  for (let element of array) {
-    // Write your code here.
+  const result = []; //empty array
+  for (let element of array) { // looping through the index of the array
+    result.push(callback(element)) //push the element into array after it's been passed through the callback function
   }
   return result;
 }
@@ -76,10 +81,12 @@ function map(array, callback) {
  *  //> 30 2 3
  */
 function forEach(array, callback) {
-  for (let i = 0; i < array.length; i++) {
-    // Write your code here.
+  for (let i = 0; i < array.length; i++) { // for loop 
+    callback(array[i], i, array) // callback > callback function, passes the three arguments through the callback function 
   }
 }
+
+
 
 // Do not change the code below this line.
 module.exports = { find, filter, map, forEach };
