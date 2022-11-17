@@ -13,8 +13,11 @@
  *  //> undefined
  */
 function find(array, callback) {
-  for (let element of array) {
+  for (let element of array) {//for loop
     // Write your code here.
+    if (callback(element)){//callback is a placeholder arrow function
+      return element;
+    }
   }
 }
 
@@ -33,9 +36,12 @@ function find(array, callback) {
  *  //> []
  */
 function filter(array, callback) {
-  const result = [];
-  for (let element of array) {
+  const result = [];//empty array
+  for (let element of array) {//for loop
     // Write your code here.
+    if(callback(element)){//checking if element fits callback parameters
+      result.push(element)// pushing the element inside result array
+    }
   }
   return result;
 }
@@ -55,9 +61,10 @@ function filter(array, callback) {
  *  //> []
  */
 function map(array, callback) {
-  const result = [];
-  for (let element of array) {
+  const result = [];//intitating empty array
+  for (let element of array) {// for loop
     // Write your code here.
+    result.push(callback(element))//pushing the element into array after its been passed through callback function
   }
   return result;
 }
@@ -76,8 +83,9 @@ function map(array, callback) {
  *  //> 30 2 3
  */
 function forEach(array, callback) {
-  for (let i = 0; i < array.length; i++) {
+  for (let i = 0; i < array.length; i++) {//for loop
     // Write your code here.
+    callback(array[i],i,array)//array[i] is the element, i is the index, array is the entire array
   }
 }
 
