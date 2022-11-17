@@ -65,9 +65,9 @@ function map(array, callback) {
   const result = [];
   for (let element of array) {
     // Write your code here.
-   if (callback(element)) {
-    array.push(element)
-   } 
+   //if (callback(element)) {
+   // array.push(element)
+   
   }
   return result;
 }
