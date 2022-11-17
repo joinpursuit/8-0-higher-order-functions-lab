@@ -15,6 +15,9 @@
 function find(array, callback) {
   for (let element of array) {
     // Write your code here.
+    if (callback(element)) {
+      return element
+    }
   }
 }
 
@@ -33,12 +36,22 @@ function find(array, callback) {
  *  //> []
  */
 function filter(array, callback) {
+  // const result = [];
+  // for (let element of array) {
+  //   // Write your code here.
+  // }
+  // return result;
+
   const result = [];
   for (let element of array) {
     // Write your code here.
+    if (callback(element)){
+      result.push(element)
+    }
   }
-  return result;
-}
+    return result
+  }
+
 
 /**
  * Returns an array where each element is transformed by the callback. If the array is empty, return an empty array.
@@ -54,14 +67,15 @@ function filter(array, callback) {
  *  map([], (element) => element < 0);
  *  //> []
  */
-function map(array, callback) {
-  const result = [];
-  for (let element of array) {
-    // Write your code here.
-  }
-  return result;
-}
-
+ function map(array, callback) {
+const result = [];
+ for (let element of array) {
+   // Write your code here.
+   // callback(element) // transformed it
+   result.push(callback(element))
+ }
+ return result;
+ }
 /**
  * Does not return anything. Passes each element of the array into the callback along with the index and the array, in that order.
  * @param {*[]} array - An array of elements. Could be anything!
@@ -75,11 +89,15 @@ function map(array, callback) {
  *  //> 20 1 3
  *  //> 30 2 3
  */
-function forEach(array, callback) {
+ function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
     // Write your code here.
+    callback(array[i], i, array)
   }
 }
 
+ 
+
 // Do not change the code below this line.
 module.exports = { find, filter, map, forEach };
+ 
