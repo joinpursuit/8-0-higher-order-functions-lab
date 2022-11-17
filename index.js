@@ -13,10 +13,17 @@
  *  //> undefined
  */
 function find(array, callback) {
+//inputs: Array and callback function
+//output: EITHER the first element that is true OR "undefined"
+/*  Go through each element of the array to find out if any of them are true according to the callback function. Return the first one that does that.*/
+
   for (let element of array) {
-    // Write your code here.
+    if (callback(element)){ 
+      return element;     //the first time this returns, it will exit completely
+    }
   }
-}
+} //no need for an else statement because if nothing is true, it IS undefined
+
 
 /**
  * Returns an array of all elements in the array that cause the callback to return `true`. If the array is empty or no elements cause the callback to return `true`, then return an empty array.
@@ -35,8 +42,10 @@ function find(array, callback) {
 function filter(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
+    if (callback(element)){
+    result.push(element)
   }
+}
   return result;
 }
 
@@ -57,8 +66,8 @@ function filter(array, callback) {
 function map(array, callback) {
   const result = [];
   for (let element of array) {
-    // Write your code here.
-  }
+      result.push(callback(element));
+}
   return result;
 }
 
@@ -77,7 +86,7 @@ function map(array, callback) {
  */
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
-    // Write your code here.
+     callback(array[i], i, array);
   }
 }
 
