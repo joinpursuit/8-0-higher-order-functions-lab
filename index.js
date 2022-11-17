@@ -13,9 +13,17 @@
  *  //> undefined
  */
 function find(array, callback) {
-  for (let element of array) {
+  // for (let i = 0; i < array.length)
+  for (let element of array) { // for loop
     // Write your code here.
+
+    // check is parameters of callback against each element in aray
+    if(callback(element)){
+      // return that element that fits callback parameters
+      return element
+    }
   }
+  return undefined
 }
 
 /**
@@ -32,10 +40,17 @@ function find(array, callback) {
  *  filter([1, 2, 3], (element) => element < 0);
  *  //> []
  */
-function filter(array, callback) {
+function filter(array, callback) { // callback is function being passed as a parameter
   const result = [];
+  //for (let i = 0; i < array.length; i++)
   for (let element of array) {
     // Write your code here.
+    
+    // checking if the parameters of callback against elements of array
+    if(callback(element)) {
+      //if true push into result
+      result.push(element)
+    }
   }
   return result;
 }
@@ -54,13 +69,28 @@ function filter(array, callback) {
  *  map([], (element) => element < 0);
  *  //> []
  */
-function map(array, callback) {
+// function map(array, callback) {
+//   const result = [];
+//   for (let element of array) {
+//     // Write your code here.
+//     result.push(callback(element))
+//   }
+//   return result;
+// }
+
+
+function map(array, callback) { // parameter of callback is in the testfile
   const result = [];
-  for (let element of array) {
-    // Write your code here.
+  for (let element of array) { // loop through array and element = 0 or index
+   // apply the parameter of callback to the array
+    result.push(callback(element)) // push the results of that into result[] 
   }
+
   return result;
+  
 }
+
+//push element through array after its been pushed into the call back
 
 /**
  * Does not return anything. Passes each element of the array into the callback along with the index and the array, in that order.
@@ -78,6 +108,9 @@ function map(array, callback) {
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
     // Write your code here.
+
+    callback(array[i], i, array) //
+    //params of
   }
 }
 
