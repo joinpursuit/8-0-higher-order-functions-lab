@@ -91,7 +91,7 @@ describe("filter()", () => {
   });
 });
 
-describe("map()", () => {
+describe.only("map()", () => {
   test("should return all elements in an array as transformed by the callback", () => {
     const array = [10, 20, 30];
     const callback = (element) => element + 1;
