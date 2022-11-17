@@ -141,7 +141,7 @@ describe("map()", () => {
   });
 });
 
-describe("forEach()", () => {
+describe.only("forEach()", () => {
   test("should pass the element, the index, and the array into the callback, in that order", () => {
     const actual = [];
     const array = ["First", "Second", "Third"];
