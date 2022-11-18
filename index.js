@@ -15,6 +15,8 @@
 function find(array, callback) {
   for (let element of array) {
     // Write your code here.
+    //callback is an anonymous function that is being called on each element 
+    //if return from callback is true then return that element 
     if(callback(element)){
       return element;
     }
@@ -39,6 +41,8 @@ function filter(array, callback) {
   const result = [];
   for (let element of array) {
     // Write your code here.
+    // callback is an anonymous function that is being called on each element
+    // if return from callback is true then push the element to the array
     if(callback(element)){
       result.push(element);
     }
@@ -64,6 +68,7 @@ function map(array, callback) {
   const result = [];
   for (let element of array) {
     // Write your code here.
+    //push each return from the callback function into the result array
     result.push(callback(element));
   }
   return result;
@@ -85,6 +90,7 @@ function map(array, callback) {
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
     // Write your code here.
+    //calling callback for each element in the array
     callback(array[i], i, array);
   }
 }
