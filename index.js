@@ -41,7 +41,12 @@ function filter(array, callback) {
   const result = [];
   for (let element of array) {
     // Write your code here.
+    if (callback(element)){
+      result.push(element)
+    }
   }
+
+
   return result;
 }
 
@@ -63,6 +68,7 @@ function map(array, callback) {
   const result = [];
   for (let element of array) {
     // Write your code here.
+    result.push(callback(element))
   }
   return result;
 }
